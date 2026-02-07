@@ -1,89 +1,227 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="pt-BR">
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/12.7.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/12.7.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/12.7.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/12.7.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/12.7.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/12.7.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/12.7.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/12.7.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/12.7.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/12.7.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Martins Tech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+<body>
+  <div class="hero-area" id="home">
+    <header class="topbar">
+      <div class="logo-area">
+        <img src="img/Group 1.svg" alt="Ícone Martins Tech" class="logo-mark">
+      </div>
+      <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#precos">Preços</a>
+        <a href="#contato">Orçamento</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1 class="hero-title">Nossa Startup está aqui!</h1>
+      <p class="hero-subtitle">Vamos construir um futuro juntos!</p>
+    </section>
+  </div>
+
+  <section id="sobre" class="sobre">
+    <div class="sobre-container">
+      <div class="sobre-image">
+        <span class="sobre-tag">Quem são vocês?</span>
+        <img src="img/desingCreator.png" alt="Equipe Martins Tech">
+      </div>
+      <div class="sobre-texto">
+        <p>
+          Somos um time de jovens talentos da área de Tecnologia da Informação, atualmente em
+          formação acadêmica em Análise e Desenvolvimento de Sistemas, com mais de 3 anos de
+          experiência prática em soluções digitais. Unimos conhecimento técnico sólido, vivência
+          real de mercado e uma mentalidade moderna, focada em inovação, performance e resultados.
+        </p>
+      </div>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+  </section>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+  <section class="servicos">
+    <div class="servicos-inner">
+      <!-- Grid flexível: adicione ou remova quantos .servico-card quiser; mantêm 2 colunas e mesmo tamanho -->
+      <div class="servicos-left">
+        <div class="servico-card" data-servico="websites">
+          <span class="servico-titulo">Websites</span>
+          <span class="servico-icon">
+            <img src="img/streamline-plump_browser-website-1-remix.svg" alt="Ícone de website">
+          </span>
+          <button type="button" class="servico-btn">Saiba mais</button>
+        </div>
+        <div class="servico-card" data-servico="automacoes">
+          <span class="servico-titulo">Automações</span>
+          <span class="servico-icon">
+            <img src="img/material-symbols_automation.svg" alt="Ícone de automação">
+          </span>
+          <button type="button" class="servico-btn">Em Breve</button>
+        </div>
+        <!--
+        <div class="servico-card" data-servico="sistemas">
+          <span class="servico-titulo">Desenvolvimento<br>de Sistemas</span>
+          <span class="servico-icon">
+            <img src="img/eos-icons_file-system-outlined.svg" alt="Ícone de sistema">
+          </span>
+          <button type="button" class="servico-btn">Em Breve</button>
+        </div>
+        <div class="servico-card" data-servico="automacoes">
+          <span class="servico-titulo">Automações</span>
+          <span class="servico-icon">
+            <img src="img/material-symbols_automation.svg" alt="Ícone de automação">
+          </span>
+          <button type="button" class="servico-btn">Em Breve</button>
+        </div>
+        <div class="servico-card" data-servico="solucoes">
+          <span class="servico-titulo">Soluções em<br>Demanda</span>
+          <button type="button" class="servico-btn">Em Breve</button>
+        </div>
+        <div class="servico-card" data-servico="suporte">
+          <span class="servico-titulo">Suporte e<br>Evolução Digital</span>
+          <span class="servico-icon">
+            <img src="img/gravity-ui_rocket.svg" alt="Ícone de foguete">
+          </span>
+          <button type="button" class="servico-btn">Em Breve</button>
+        </div>
+        -->
+        <!-- Opcional: descomente o card abaixo para preencher a última célula quando tiver número ímpar de serviços -->
+        <!-- <div class="servico-card vazio" aria-hidden="true"></div> -->
+      </div>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+      <div class="servicos-right">
+        <div class="servicos-tag">O que vocês fazem?</div>
+        <div class="servicos-info">
+          <h3 class="servicos-info-title">Passe o mouse em um serviço</h3>
+          <p class="servicos-info-text">
+            Ao passar o mouse sobre cada quadradinho, você verá aqui uma descrição resumida do que
+            fazemos em cada tipo de solução.
+          </p>
+        </div>
+        <img src="img/thinkingMan.svg" alt="Ilustração de pessoa pensando" class="servicos-image">
+      </div>
+    </div>
+  </section>
+
+  <section class="digital">
+    <div class="digital-inner">
+      <div class="digital-left">
+        <button class="digital-tag">
+          Bora ser <span>DIGITAL!</span>
+        </button>
+
+        <div class="digital-alert">
+          <div class="digital-alert-main">
+            <p>60% das ações do seu negócio podem ser automatizadas.</p>
+            <img src="img/alert.png" alt="" class="alert-digital">
+          </div>
+          <button class="digital-alert-cta">Não fique para trás!</button>
+        </div>
+      </div>
+
+      <div class="digital-right">
+        <img class="digital-globes" src="img/GlobalLogo.png" alt="Ícones globais">
+        <img class="digital-people" src="img/TwoPeopleComputer.png" alt="Duas pessoas no computador">
+      </div>
+    </div>
+  </section>
+
+  <section id="precos" class="precos">
+    <div class="precos-inner">
+      <h2 class="precos-titulo">Preços sugeridos</h2>
+      <p class="precos-subtitulo">Valores indicativos — orçamento personalizado sem compromisso.</p>
+      <div class="preco-grid">
+        <article class="preco-card">
+          <h3 class="preco-nome">Site institucional</h3>
+          <p class="preco-desc">Landing ou site com até 5 páginas, design responsivo e formulário de contato.</p>
+          <p class="preco-valor">A partir de <strong>R$ 600</strong></p>
+          <a href="#contato" class="preco-btn">Solicitar orçamento</a>
+        </article>
+        <article class="preco-card preco-card-destaque">
+          <span class="preco-badge">Recomendado</span>
+          <h3 class="preco-nome">Site + automação</h3>
+          <p class="preco-desc">Site institucional + integração com WhatsApp, e-mail ou planilhas.</p>
+          <p class="preco-valor">A partir de <strong>R$ 900</strong></p>
+          <a href="#contato" class="preco-btn">Solicitar orçamento</a>
+        </article>
+        <article class="preco-card">
+          <h3 class="preco-nome">Projeto sob medida</h3>
+          <p class="preco-desc">Sistemas, e-commerce ou soluções customizadas. Valor conforme escopo.</p>
+          <p class="preco-valor">Sob consulta</p>
+          <a href="#contato" class="preco-btn">Solicitar orçamento</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="contato">
+    <div class="contato-inner">
+      <div class="contato-texto">
+        <h2 class="contato-titulo">Conte sua ideia</h2>
+        <p class="contato-subtitulo">Preencha o formulário ou fale direto pelo E-mail. Respondemos em até 24h.</p>
+        <div class="contato-canais">
+         
+          <a href="mailto:martinstechweb@gmail.com" class="contato-email" id="link-email-contato" aria-label="E-mail">
+            <span class="contato-canal-icon">✉</span>
+            <span>martinstechweb@gmail.com</span>
+          </a>
+        </div>
+      </div>
+      <form class="contato-form" action="#" method="post" id="form-contato">
+        <label for="contato-nome">Nome</label>
+        <input type="text" id="contato-nome" name="name" required placeholder="Seu nome">
+        <label for="contato-email-input">E-mail</label>
+        <input type="email" id="contato-email-input" name="user_email" required placeholder="seu@email.com">
+        <label for="contato-telefone">Telefone / WhatsApp</label>
+        <input type="tel" id="contato-telefone" name="telefone" placeholder="(11) 99999-9999">
+        <label for="contato-projeto">Tipo de projeto</label>
+        <select id="contato-projeto" name="projeto">
+          <option value="">Selecione</option>
+          <option value="Site institucional">Site institucional</option>
+          <option value="Site + automação">Site + automação</option>
+          <option value="Projeto sob medida">Projeto sob medida</option>
+          <option value="Outro">Outro</option>
+        </select>
+        <label for="contato-mensagem">Mensagem</label>
+        <textarea id="contato-mensagem" name="message" rows="4" placeholder="Conte brevemente o que você precisa." required></textarea>
+        <button type="submit" class="contato-btn">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="rodape">
+    <div class="rodape-inner">
+      <div class="rodape-logo">
+        <img src="img/Group 1.svg" alt="Ícone Martins Tech" class="logo-mark">
+      </div>
+      <div class="rodape-blog">
+        <h3 class="rodape-title">+ no Blog</h3>
+        <p>Em Breve!</p>
+      </div>
+      <div class="rodape-social">
+        <h3 class="rodape-title">Acompanhe:</h3>
+        <div class="rodape-instagram">
+          <span class="rodape-instagram-icon">◎</span>
+          <span>Em Breve!</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
+  <script src="script.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="email.js" defer></script>
+</body>
+
 </html>

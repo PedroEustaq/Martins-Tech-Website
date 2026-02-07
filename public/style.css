@@ -1,0 +1,1032 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+body {
+    font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #0f172a;
+    background: #f3f4ff;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.hero-area {
+    background: linear-gradient(135deg, #0047ff 0%, #005dff 60%, #347bff 100%);
+    color: #ffffff;
+    padding: 24px 8% 72px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-area img {
+    height: 40px;
+}
+
+.logo-mark {
+    height: 32px;
+}
+
+.nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 24px;
+    position: relative;
+}
+
+.nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #ffffff;
+    transition: width 0.2s ease;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+.hero {
+    margin-top: 64px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column nowrap;
+    height: 400px;
+}
+
+.hero-title,
+.hero-subtitle,
+.logo-area img,
+.sobre-image,
+.sobre-texto p,
+.servicos-left,
+.servicos-right,
+.digital-left,
+.digital-right,
+.precos-titulo,
+.preco-grid,
+.contato-inner {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    margin-top: 12px;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.sobre {
+    position: relative;
+    padding: 64px 8% 140px;
+    height: 600px;
+    background: #f3f4ff;
+    z-index: 8;
+}
+
+.sobre-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+    gap: 40px;
+    align-items: center;
+}
+
+.sobre-image {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: start;
+}
+
+.sobre-image img {
+    max-width: 420px;
+    width: 100%;
+}
+
+.sobre-texto {
+    background: #ffffff00;
+    padding: 0px;
+    border-radius: 24px;
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0);
+}
+
+.sobre-tag {
+    display: inline-block;
+    background: #0047ff;
+    color: #ffffff;
+    padding: 8px 18px;
+    border-radius: 0px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.sobre-texto p {
+    line-height: 1.7;
+    font-size: 1.2rem;
+}
+
+.servicos {
+    --servicos-color-main: #0047ff;
+    --servicos-color-soft: #c7c8ff;
+    background: #f3f4ff;
+    padding: 40px 8% 72px;
+    min-height: 600px;
+    z-index: 2;
+    position: relative;
+}
+
+.servicos-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+    gap: 40px;
+    align-items: center;
+}
+
+/* Grid flexível: coloque quantos .servico-card quiser; sempre 2 colunas, mesmo tamanho */
+.servicos-left {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 160px;
+    gap: 16px;
+}
+
+.servico-card {
+    background: #c7c8ff;
+    border-radius: 0;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 0;
+    height: 100%;
+    box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.08);
+    transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+.servico-card.ativo {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.25);
+}
+
+/* Opcional: card vazio para preencher última célula (pode remover se não quiser) */
+.servico-card.vazio {
+    background: transparent;
+    box-shadow: none;
+    pointer-events: none;
+}
+
+.servico-titulo {
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.servico-icon {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.servico-icon img {
+    width: 28px;
+    height: 28px;
+}
+
+/* Botões dos serviços — redondos, visíveis só no hover do card */
+.servico-btn {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 8px 18px;
+    margin-top: 10px;
+    align-self: flex-start;
+    border-radius: 999px;
+    color: #0f172a;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(8px) scale(0.9);
+    transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.2s ease, visibility 0s linear 0.25s;
+}
+
+.servico-card:hover .servico-btn {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+    transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.2s ease, visibility 0s;
+}
+
+.servico-btn:hover {
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.25);
+}
+
+.servico-btn:disabled,
+.servico-btn[aria-disabled="true"] {
+    cursor: not-allowed;
+    opacity: 0.85;
+}
+
+/* Animação customizada por card — Websites: fade */
+/* Animação padrão para qualquer card; as regras por data-servico abaixo sobrescrevem quando existir */
+.servico-card:hover .servico-btn {
+    animation: btn-entra-fade 0.4s ease forwards;
+}
+
+/* Animação customizada — Sistemas: slide de baixo */
+.servico-card[data-servico="sistemas"]:hover .servico-btn {
+    animation: btn-entra-slide 0.4s ease forwards;
+}
+
+/* Animação customizada — Automações: scale */
+.servico-card[data-servico="automacoes"]:hover .servico-btn {
+    animation: btn-entra-scale 0.4s ease forwards;
+}
+
+/* Animação customizada — Soluções: bounce */
+.servico-card[data-servico="solucoes"]:hover .servico-btn {
+    animation: btn-entra-bounce 0.5s ease forwards;
+}
+
+/* Animação customizada — Suporte: leve rotação */
+.servico-card[data-servico="suporte"]:hover .servico-btn {
+    animation: btn-entra-rotate 0.45s ease forwards;
+}
+
+@keyframes btn-entra-fade {
+    from {
+        opacity: 0;
+        transform: translateY(0) scale(1);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes btn-entra-slide {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(1);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes btn-entra-scale {
+    from {
+        opacity: 0;
+        transform: translateY(0) scale(0.3);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes btn-entra-bounce {
+    0% {
+        opacity: 0;
+        transform: translateY(24px) scale(1);
+    }
+    55% {
+        transform: translateY(-6px) scale(1);
+    }
+    75% {
+        transform: translateY(4px) scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes btn-entra-rotate {
+    from {
+        opacity: 0;
+        transform: translateY(0) rotate(-12deg) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(0deg) scale(1);
+    }
+}
+
+.servicos-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.servicos-tag {
+    align-self: flex-end;
+    background: var(--servicos-color-main);
+    color: #ffffff;
+    padding: 10px 20px;
+    font-weight: 700;
+    border-radius: 3px;
+    font-size: 1rem;
+}
+
+.servicos-info {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 20px 24px;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+    border-left: 4px solid var(--servicos-color-main);
+    max-width: 420px;
+}
+
+.servicos-info-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.servicos-info-text {
+    font-size: 0.98rem;
+    line-height: 1.6;
+}
+
+.servicos-image {
+    max-width: 320px;
+    width: 100%;
+    align-self: flex-end;
+}
+
+/* Temas de cor por serviço (contaminação visual) */
+.servicos.tema-websites {
+    --servicos-color-main: #2563eb;
+    --servicos-color-soft: #dbeafe;
+}
+
+.servicos.tema-sistemas {
+    --servicos-color-main: #0ea5e9;
+    --servicos-color-soft: #e0f2fe;
+}
+
+.servicos.tema-automacoes {
+    --servicos-color-main: #22c55e;
+    --servicos-color-soft: #dcfce7;
+}
+
+.servicos.tema-solucoes {
+    --servicos-color-main: #a855f7;
+    --servicos-color-soft: #f3e8ff;
+}
+
+.servicos.tema-suporte {
+    --servicos-color-main: #f97316;
+    --servicos-color-soft: #ffedd5;
+}
+
+.servicos.tema-websites .servico-card[data-servico="websites"],
+.servicos.tema-sistemas .servico-card[data-servico="sistemas"],
+.servicos.tema-automacoes .servico-card[data-servico="automacoes"],
+.servicos.tema-solucoes .servico-card[data-servico="solucoes"],
+.servicos.tema-suporte .servico-card[data-servico="suporte"] {
+    background: var(--servicos-color-main);
+    color: #ffffff;
+}
+
+.servicos.tema-websites .servico-card:not([data-servico="websites"]):not(.vazio),
+.servicos.tema-sistemas .servico-card:not([data-servico="sistemas"]):not(.vazio),
+.servicos.tema-automacoes .servico-card:not([data-servico="automacoes"]):not(.vazio),
+.servicos.tema-solucoes .servico-card:not([data-servico="solucoes"]):not(.vazio),
+.servicos.tema-suporte .servico-card:not([data-servico="suporte"]):not(.vazio) {
+    background: var(--servicos-color-soft);
+}
+
+.servicos.tema-websites .servico-icon img,
+.servicos.tema-sistemas .servico-icon img,
+.servicos.tema-automacoes .servico-icon img,
+.servicos.tema-solucoes .servico-icon img,
+.servicos.tema-suporte .servico-icon img {
+    filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0.12));
+}
+
+.digital {
+    background: #ffffff;
+    padding: 72px 8% 96px;
+}
+
+.digital-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+    gap: 40px;
+    align-items: center;
+    position: relative;
+}
+
+.digital-left {
+    position: relative;
+}
+
+.alert-digital {
+    width: 40px;
+}
+.digital-tag {
+    background: #0047ff;
+    color: #ffffff;
+    border: none;
+    padding: 14px 28px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.03em;
+    cursor: default;
+}
+
+.digital-tag span {
+    font-weight: 800;
+}
+
+.digital-help {
+    margin-left: 12px;
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    border: none;
+    background: #111827;
+    color: #ffffff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.digital-alert {
+    margin-top: 36px;
+    max-width: 420px;
+    z-index: 3;
+    position: relative;
+}
+
+.digital-alert-main {
+    background: #ff1493;
+    color: #ffffff;
+    padding: 18px 22px;
+    border-radius: 4px 4px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+}
+
+.digital-alert-main p {
+    max-width: 260px;
+    font-size: 1.2rem;
+}
+
+.digital-alert-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    border: 2px solid #ffffff;
+    font-weight: 800;
+}
+
+.digital-alert-cta {
+    width: 100%;
+    border: none;
+    background: #ff1493;
+    color: #ffffff;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: left;
+    margin-top: 4px;
+    cursor: pointer;
+}
+
+.digital-right {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 260px;
+}
+
+.digital-globes {
+    position: absolute;
+    top: -120px;
+    z-index: 1;
+    right: -100px;
+    width: 300px;
+    opacity: 0.9;
+}
+
+.digital-people {
+    max-width: 360px;
+    z-index: 1;
+}
+
+/* ---------- Preços ---------- */
+.precos {
+    background: #ffffff;
+    padding: 64px 8% 80px;
+}
+
+.precos-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.precos-titulo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.precos-subtitulo {
+    font-size: 1rem;
+    color: #64748b;
+    margin-bottom: 40px;
+}
+
+.preco-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    align-items: stretch;
+}
+
+.preco-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.preco-card:hover {
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
+    transform: translateY(-4px);
+}
+
+.preco-card-destaque {
+    background: linear-gradient(135deg, #0047ff 0%, #2563eb 100%);
+    border-color: #0047ff;
+    color: #ffffff;
+}
+
+.preco-card-destaque .preco-desc,
+.preco-card-destaque .preco-valor {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.preco-card-destaque .preco-valor strong {
+    color: #fff;
+}
+
+.preco-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.25);
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.preco-nome {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.preco-desc {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #64748b;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.preco-valor {
+    font-size: 1rem;
+    color: #0f172a;
+    margin-bottom: 20px;
+}
+
+.preco-valor strong {
+    font-size: 1.4rem;
+}
+
+.preco-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.preco-card .preco-btn {
+    background: #0047ff;
+    color: #ffffff;
+}
+
+.preco-card .preco-btn:hover {
+    background: #0038cc;
+    transform: scale(1.03);
+}
+
+.preco-card-destaque .preco-btn {
+    background: #ffffff;
+    color: #0047ff;
+}
+
+.preco-card-destaque .preco-btn:hover {
+    background: #f1f5f9;
+    color: #0038cc;
+}
+
+/* ---------- Contato ---------- */
+.contato {
+    background: #f3f4ff;
+    padding: 64px 8% 80px;
+}
+
+.contato-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    gap: 48px;
+    align-items: start;
+}
+
+.contato-titulo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+.contato-subtitulo {
+    font-size: 1rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.contato-canais {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contato-whatsapp,
+.contato-email {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #0f172a;
+    background: #ffffff;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.contato-whatsapp:hover,
+.contato-email:hover {
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+    transform: translateY(-2px);
+}
+
+.contato-canal-icon {
+    font-size: 1.25rem;
+}
+
+.contato-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.1);
+}
+
+.contato-form label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.contato-form input,
+.contato-form select,
+.contato-form textarea {
+    padding: 12px 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+}
+
+.contato-form input:focus,
+.contato-form select:focus,
+.contato-form textarea:focus {
+    outline: none;
+    border-color: #0047ff;
+}
+
+.contato-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.contato-btn {
+    padding: 14px 28px;
+    background: #0047ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 999px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.contato-btn:hover {
+    background: #0038cc;
+    transform: scale(1.02);
+}
+
+/* ---------- Botão flutuante WhatsApp ---------- */
+.float-whatsapp {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 20px;
+    background: #25d366;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 999px;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.float-whatsapp:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 32px rgba(37, 211, 102, 0.5);
+}
+
+.float-whatsapp-icon {
+    font-size: 1.4rem;
+}
+
+@media (max-width: 768px) {
+    .float-whatsapp-text {
+        display: none;
+    }
+}
+
+.rodape {
+    background: #0047ff;
+    color: #ffffff;
+    padding: 28px 8% 32px;
+}
+
+.rodape-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.rodape-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.rodape-logo img {
+    height: 32px;
+}
+
+.rodape-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.rodape-blog p {
+    font-size: 0.9rem;
+}
+
+.rodape-social {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+}
+
+.rodape-instagram {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+}
+
+.rodape-instagram-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    border: 2px solid #ffffff;
+    font-size: 0.7rem;
+}
+
+@media (max-width: 900px) {
+    .hero-area {
+        padding: 20px 20px 56px;
+        border-radius: 0 0 32px 32px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .sobre {
+        padding: 48px 20px 64px;
+        height: auto;
+        min-height: 0;
+    }
+
+    .sobre-container {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        align-items: stretch;
+    }
+
+    .sobre-image {
+        width: 100%;
+        max-width: 100%;
+        align-items: center;
+    }
+
+    .sobre-image img {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .sobre-texto {
+        padding: 24px;
+        min-width: 0;
+    }
+
+    .sobre-texto p {
+        font-size: 1rem;
+    }
+
+    .digital {
+        padding: 48px 20px 72px;
+    }
+
+    .digital-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .digital-right {
+        justify-content: center;
+        margin-top: 32px;
+    }
+
+    .digital-globes {
+        right: 0;
+        width: 180px;
+    }
+
+    .servicos {
+        min-height: 0;
+        padding: 48px 20px 64px;
+    }
+
+    .servicos-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        align-items: stretch;
+    }
+
+    .servicos-left {
+        grid-template-columns: 1fr;
+        grid-auto-rows: minmax(140px, auto);
+        gap: 12px;
+        min-width: 0;
+    }
+
+    .servico-card {
+        min-height: 140px;
+    }
+
+    .servicos-right {
+        width: 100%;
+        min-width: 0;
+        align-items: center;
+    }
+
+    .servicos-info {
+        max-width: 100%;
+    }
+    .nav a {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 500;
+        margin-left: 24px;
+        position: relative;
+    }
+    .servicos-image {
+        max-width: 100%;
+    }
+
+    .rodape-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .precos {
+        padding: 48px 20px 64px;
+    }
+
+    .preco-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contato {
+        padding: 48px 20px 64px;
+    }
+
+    .contato-inner {
+        grid-template-columns: 1fr;
+    }
+}
